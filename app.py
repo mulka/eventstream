@@ -18,8 +18,8 @@ tweetstream_config = {
     "twitter_access_token_secret": os.environ["TWITTER_ACCESS_TOKEN_SECRET"],
 }
 
-# query_string = "locations=-83.8,42.2,-83.7,42.3"
-query_string = "track=%23twitter"
+query_string = "locations=-83.8,42.2,-83.7,42.3"
+# query_string = "track=%23twitter"
 
 stream = tweetstream.TweetStream(tweetstream_config)
 stream.fetch("/1.1/statuses/filter.json?" + query_string, callback=tweetstream_callback)
@@ -38,10 +38,14 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
         clients.discard(self)
 
 
-application = tornado.web.Application([
+application = tornado.web.Application(
+[
     (r"/", MainHandler),
     (r"/ws", WebSocketHandler),
-], template_path='templates')
+],
+template_path='templates',
+# debug=True,
+)
 
 if __name__ == "__main__":
     application.listen(8888)

@@ -1,3 +1,20 @@
-<script>
-var ws = new WebSocket("ws://localhost:8888/ws");
-</script>
+<html>
+<body>
+
+	<div id="text"></div>
+	<script>
+	function openWS(messageContainer) {
+		ws = new WebSocket("ws://localhost:8888/ws");
+		ws.onmessage = function(e) {
+		  var data = JSON.parse(e.data);
+		  document.getElementById('text').innerText = data.text;
+		};
+		ws.onclose = function(e) {
+		  openWS(messageContainer);
+		};
+	}
+
+	openWS();
+	</script>
+</body>
+</html>
