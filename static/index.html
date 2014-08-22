@@ -1,0 +1,15 @@
+<html ng-app="myApp">
+<head>
+  <script src="/static/js/angular.min.js"></script>
+  <script src="/static/js/controllers.js"></script>
+</head>
+<body>
+  <div ng-controller="TweetListCtrl">
+    <ul>
+      <li ng-repeat="tweet in tweets">
+        {{tweet.text}}
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

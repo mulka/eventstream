@@ -27,7 +27,8 @@ stream.fetch("/1.1/statuses/filter.json?" + query_string, callback=tweetstream_c
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render('index.html')
+        with open('static/index.html') as f:
+            self.write(f.read())
 
 class WebSocketHandler(tornado.websocket.WebSocketHandler):
     def open(self):
@@ -44,6 +45,7 @@ application = tornado.web.Application(
     (r"/ws", WebSocketHandler),
 ],
 template_path='templates',
+static_path=os.path.join(os.path.dirname(__file__), "static"),
 # debug=True,
 )
 
