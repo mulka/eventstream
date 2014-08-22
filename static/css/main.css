@@ -1,0 +1,31 @@
+.tweet-list {
+	padding: 0;
+	margin: 0;
+}
+
+.tweet {
+	list-style: none;
+	padding: 5px 12px 5px 69px;
+	border: 1px solid #e8e8e8;
+	border-width: 0 0 1px;
+	background-color: white;
+	min-height: 48px;
+}
+
+.header {
+	position: relative;
+}
+
+.avatar {
+	position: absolute;
+	top: 0;
+	left: -57px;
+	width: 48px;
+	height: 48px;
+	border-radius: 4px;
+}
+
+.entry-title {
+	margin: 0 5px 0 0;
+	word-wrap: break-word;
+}

@@ -7,9 +7,10 @@ import tweetstream
 
 clients = set()
 
-def tweetstream_callback(message):
-    for client in clients:
-        client.write_message(message)
+def tweetstream_callback(tweet):
+    if 'retweeted_by' not in tweet:
+        for client in clients:
+            client.write_message(tweet)
 
 tweetstream_config = {
     "twitter_consumer_key": os.environ["TWITTER_CONSUMER_KEY"],
