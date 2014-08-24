@@ -7,10 +7,24 @@ import tweetstream
 
 clients = set()
 
+min_lat = 42.2
+min_lng = -83.8
+max_lat = 42.3
+max_lng = -83.7
+
 def tweetstream_callback(tweet):
-    if 'retweeted_by' not in tweet:
-        for client in clients:
-            client.write_message(tweet)
+    if 'retweeted_by' in tweet:
+        return
+
+    coord = tweet['coordinates']['coordinates']
+    lng = coord[0]
+    lat = coord[1]
+    coord_in_bounds = lat < min_lat or lat > max_lat or lng < min_lng or lng > max_lng
+    if coord_in_bounds and tweet['place']['name'] != 'Ann Arbor':
+        return
+
+    for client in clients:
+        client.write_message(tweet)
 
 tweetstream_config = {
     "twitter_consumer_key": os.environ["TWITTER_CONSUMER_KEY"],
@@ -19,7 +33,7 @@ tweetstream_config = {
     "twitter_access_token_secret": os.environ["TWITTER_ACCESS_TOKEN_SECRET"],
 }
 
-query_string = "locations=-83.8,42.2,-83.7,42.3"
+query_string = "locations=%s,%s,%s,%s" % (min_lng, min_lat, max_lng, max_lat)
 # query_string = "track=%23twitter"
 
 stream = tweetstream.TweetStream(tweetstream_config)
