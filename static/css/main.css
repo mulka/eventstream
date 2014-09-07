@@ -1,6 +1,17 @@
+html {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
 .tweet-list {
+	position: absolute;
 	padding: 0;
 	margin: 0;
+	bottom: 50px;
 }
 
 .tweet {
@@ -28,4 +39,22 @@
 .entry-title {
 	margin: 0 5px 0 0;
 	word-wrap: break-word;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 10px;
+	background: white;
+	font-size: x-large;
+}
+
+.hashtag {
+	float: left;
+}
+
+.powered-by {
+	float: right;
+	margin-right: 30px;
 }
