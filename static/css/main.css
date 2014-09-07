@@ -5,13 +5,23 @@ html {
 html, body {
 	margin: 0;
 	padding: 0;
+	background-color: white;
+}
+
+a {
+	color: #2FC2EF;
+	text-decoration: none;
 }
 
 .tweet-list {
 	position: absolute;
 	padding: 0;
 	margin: 0;
-	bottom: 50px;
+	bottom: 60px;
+	left: 0;
+	right: 0;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .tweet {
@@ -36,6 +46,14 @@ html, body {
 	border-radius: 4px;
 }
 
+.full-name {
+	font-weight: bold;
+}
+
+.p-nickname {
+	color: #8899a6;
+}
+
 .entry-title {
 	margin: 0 5px 0 0;
 	word-wrap: break-word;
@@ -44,17 +62,22 @@ html, body {
 .footer {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
-	padding: 10px;
+	left: 0;
+	right: 0;
 	background: white;
 	font-size: x-large;
 }
 
 .hashtag {
-	float: left;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 0 0 20px 40px;
 }
 
 .powered-by {
-	float: right;
-	margin-right: 30px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 0 40px 20px 0;
 }

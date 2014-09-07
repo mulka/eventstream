@@ -17,11 +17,14 @@
           </div>
         </span>
         <div class="entry-content">
-          <p class="entry-title">{{ tweet.text }}</p>
+          <p class="entry-title" ng-bind-html="tweet.linked_up_text"></p>
         </div>
       </li>
     </ul>
   </div>
-  <div class="footer"><div class="hashtag">To participate: tweet with #twitter</div><span class="powered-by">powered by <span style="color: #4558e9">tchat</span><span style="color: #ccc;">.io</span></span></div>
+  <div class="footer">
+    <div class="hashtag">To participate: tweet with #twitter</div>
+    <span class="powered-by">powered by <span style="color: #4558e9">tchat.io</span></span>
+  </div>
 </body>
 </html>
