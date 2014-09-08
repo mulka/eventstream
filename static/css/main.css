@@ -34,6 +34,25 @@ a {
 	min-height: 48px;
 }
 
+.tweet.ng-move,
+.tweet.ng-enter,
+.tweet.ng-leave {
+  -webkit-transition:all linear 1s;
+  transition:all linear 1s;
+}
+
+.tweet.ng-leave.ng-leave-active,
+.tweet.ng-move,
+.tweet.ng-enter {
+  opacity:0;
+}
+
+.tweet.ng-leave,
+.tweet.ng-move.ng-move-active,
+.tweet.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
 .header {
 	position: relative;
 }
