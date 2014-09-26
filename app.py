@@ -14,7 +14,7 @@ def tweetstream_callback(tweet):
         logging.error('tweet is none')
         return
 
-    if 'retweeted_by' in tweet:
+    if 'retweeted_status' in tweet:
         return
 
     for client in clients:
