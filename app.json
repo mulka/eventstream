@@ -1,0 +1,6 @@
+{
+  "name": "Eventsream",
+  "description": "Stream tweets to a browser via Tornado and websockets",
+  "repository": "https://github.com/mulka/eventstream",
+  "keywords": ["twitter", "tornado", "websockets"]
+}
