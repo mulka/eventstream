@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp',['ngAnimate']);
+var myApp = angular.module('myApp',[]);
 
 function link_it_up (tweet) {
   var html = tweet.text;

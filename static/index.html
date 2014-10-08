@@ -1,31 +1,15 @@
 <html ng-app="myApp">
 <head>
-  <link rel="stylesheet" href="/static/css/main.css">
   <script src="/static/js/angular.min.js"></script>
-  <script src="/static/js/angular-animate.min.js"></script>
   <script src="/static/js/controllers.js"></script>
 </head>
 <body>
   <div ng-controller="TweetListCtrl">
     <ul class="tweet-list">
       <li ng-repeat="tweet in tweets" class="tweet">
-        <span class="header">
-          <div class="profile">
-            <img class="avatar" ng-src="{{ tweet['user']['profile_image_url'] }}" width="48" height="48" \>
-            <span class="full-name">{{ tweet['user']['name'] }}</span>
-            <span class="p-nickname">@{{ tweet['user']['screen_name'] }}</span>
-            <span style="visibility: hidden;">✌</span>
-          </div>
-        </span>
-        <div class="entry-content">
-          <p class="entry-title" ng-bind-html="tweet.linked_up_text"></p>
-        </div>
+        @{{ tweet['user']['screen_name'] }}: {{ tweet['text'] }}
       </li>
     </ul>
-  </div>
-  <div class="footer">
-    <div class="hashtag">To participate: tweet with #twitter</div>
-    <span class="powered-by">powered by <span style="color: #4558e9">tchat.io</span></span>
   </div>
 </body>
 </html>
