@@ -1,6 +1,12 @@
 {
-  "name": "Eventsream",
+  "name": "Eventstream",
   "description": "Stream tweets to a browser via Tornado and websockets",
   "repository": "https://github.com/mulka/eventstream",
-  "keywords": ["twitter", "tornado", "websockets"]
+  "keywords": ["twitter", "tornado", "websockets"],
+  "env": {
+  	"TWITTER_CONSUMER_KEY": {},
+  	"TWITTER_CONSUMER_SECRET": {},
+  	"TWITTER_ACCESS_TOKEN": {},
+  	"TWITTER_ACCESS_TOKEN_SECRET": {}
+  }
 }
