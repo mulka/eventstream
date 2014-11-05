@@ -11,7 +11,7 @@
       <li ng-repeat="tweet in tweets" class="tweet">
         <span class="header">
           <div class="profile">
-            <img class="avatar" ng-src="{{ tweet['user']['profile_image_url'] }}" width="48" height="48" \>
+            <img class="avatar" ng-src="{{ tweet['user']['profile_image_url'] }}" />
             <span class="full-name">{{ tweet['user']['name'] }}</span>
             <span class="p-nickname">@{{ tweet['user']['screen_name'] }}</span>
             <span style="visibility: hidden;">✌</span>
